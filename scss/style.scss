@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    list-style: none;
+}
+i{
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(120, 60%, 50%); //#33cc33
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+
+    transition: background .3s ease-in-out;
+    
+
+
+    fieldset{
+        box-shadow: 0 .8rem 1rem hsl(120, 60%, 40%); //#29a329
+    }
+
+    &.error{
+        // background: hsl(16, 100%, 47%); //	#f04000 code pen
+
+        background:  #b81d25; 
+
+        fieldset{
+            box-shadow: 0 .8rem 1rem hsl(16, 100%, 37%); //#bd3200
+            transform-origin: 50% 100%;
+            animation: error 3s ease-out;
+        }
+    }
+}
+
+h1{
+    font-size: 2.3rem;
+    margin-top: 1rem;
+}
+h2{
+    font-size: 1.4rem;
+}
+
+form{
+    position: absolute;
+    width: 30rem;
+    height: 6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    ul.item-dots{
+        position: absolute;
+        right: -6rem;
+        top: 50%;
+        transform: translateY(-50%);
+
+        li{
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            background-color: hsl(0, 0%, 100%); //#ffffff
+            margin: 1.3rem 0;
+            opacity: 0.4;
+            cursor: pointer;
+
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+
+    fieldset{
+        position: absolute;
+        width: 30rem;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        border: 0;
+        border-radius: .3rem;
+        box-shadow: 0 .8rem 1rem #29a329;
+        background-color: #fff;
+        opacity: 0;
+        transform: scale(0.2);
+        transition: all 0.4s ease-in-out;
+
+        &.enable{
+            z-index: 1;
+            opacity: 1;
+            transition: all 0.5s ease-out 0.2s;
+            transform: scale(1);
+            animation: enable 0.5s ease-out 0.2s;
+        }
+
+        &.disable{
+            opacity: 0;
+            transition: all 0.3s ease-in;
+            transform: translateY(120px) scale(0.9);
+        }
+
+        i{
+            color: #000;
+            font-size: 2rem;
+            
+            &.bi-arrow-down{
+                cursor: pointer;
+            }
+        }
+
+        input{
+            border: 0;
+            outline: 0;
+            flex: 1;
+            margin-right: 1.5rem;
+            padding: 1rem 0;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        span{
+            color: #000;
+        }
+
+        &.register{
+            display: block;
+            padding: 1rem;
+            height: auto;
+
+            button{
+                display: block;
+                margin: auto;
+                padding: 0.4rem 2.5rem;
+                border: 2px solid #29a329;
+                border-radius: 1.5rem;
+                color: #29a329;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                cursor: pointer;
+                background-color: transparent;
+                transition: all .3s ease-in-out;
+
+                &:hover{
+                    background-color: #29a329;
+                    // border-color: #fff;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@keyframes enable {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    60% {
+        transform: scale(1.1);        
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+;
+@keyframes error {
+    0%, 50%, 100%{
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-3deg);
+    }
+    75%{
+        transform: rotate(3deg);
+    }
+}
+
+@media(max-width: 450px){
+    ul.item-dots{
+        right: -3rem !important;
+    }
+    form{
+        width: 25rem;
+        transform: translate(-45%, -50%);
+        fieldset{
+            width: 25rem;
+        }
+    }
+}
+

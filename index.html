@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>step by step register form</title>
+    <!--CSS Files-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!--SCRIPT Files-->
+    <script src="js/script.js" defer></script>
+
+    <!-- https://codepen.io/JeromeRenders/pen/EPNxPv -->
+  </head>
+  <body>
+    <h1>فرم مرحله ای</h1>
+    <h2>تمرین جاوااسکریپت</h2>
+
+    <form action="" novalidate>
+      <!--items will be created in javascript with the amount of fieldsets-->
+      <ul class="item-dots"></ul>
+
+      <!--user phone number-->
+      <fieldset class="enable">
+        <i class="bi bi-telephone-plus"></i>
+        <input type="text" name="userNumber" placeholder="شماره تلفن همراه" />
+        <i class="bi bi-arrow-down"></i>
+      </fieldset>
+
+      <!--user email address-->
+      <fieldset>
+        <i class="bi bi-envelope-at-fill"></i>
+        <input type="email" name="userNumber" placeholder="ایمیل" />
+        <i class="bi bi-arrow-down"></i>
+      </fieldset>
+
+      <!--user password-->
+      <fieldset>
+        <i class="bi bi-key"></i>
+        <input type="password" name="userNumber" placeholder="رمز عبور" />
+        <i class="bi bi-arrow-down"></i>
+      </fieldset>
+
+      <!--register user-->
+      <fieldset class="register">
+          <button>ثبت نام</button>
+          <div>
+            <span>قبلا ثبت نام کرده اید؟</span>
+            <span><a href="#">وارد شوید.</a></span>
+          </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
